@@ -68,39 +68,81 @@ add_action( 'wp_ajax_nopriv_get_employees_list', 'get_employees_cpt' );
 add_action( 'wp_ajax_get_employees_list', 'get_employees_cpt' );
 function get_employees_cpt() {
     $post_type = 'employees';
+    $paged = ($_POST['paged'])? $_POST['paged'] : 1;
 
     $args = array(
         'post_type'     => $post_type,
         'post_status'   => 'publish',
-        'posts_per_page'    => 10,
+        'posts_per_page'    => 3,
         'order'             => 'ASC',
+        'paged'             => $paged
     );
 
     $posts = new WP_Query($args); ?>
 
     <?php if ($posts -> have_posts()) : ?>
-        <?php while ($posts -> have_posts()) : $posts -> the_post(); 
-            $employee_name = get_field('emploee_data');
-            $employee_pic = get_field('emploee_pic');
-            $pic_size = 'thumbnail';
-        ?>
+        <div class="employees__container">
+            <?php while ($posts -> have_posts()) : $posts -> the_post(); 
+                $employee_name = get_field('emploee_data');
+                $employee_pic = get_field('emploee_pic');
+                $pic_size = 'thumbnail';
+                $theme_url = get_stylesheet_directory_uri();
+            ?>
 
-        <div>
-            <?php if ($employee_pic) : ?>
-                <img src="<?php echo esc_url($employee_pic['sizes'][$pic_size]); ?>" alt="<?php echo esc_attr($employee_pic['alt']); ?>" />
-            <?php endif; ?>
-            <?php if ($employee_name) : ?>
-                <h2><?php echo $employee_name; ?></h2>
-            <?php endif; ?>
+            <div>
+                <?php if ($employee_pic) : ?>
+                    <img src="<?php echo esc_url($employee_pic['sizes'][$pic_size]); ?>" alt="<?php echo esc_attr($employee_pic['alt']); ?>" />
+                <?php else : ?>
+                    <img class="noimage-pic" src="<?php echo $theme_url; ?>/includes/noimage.png" alt="" />
+                <?php endif; ?>
+                <?php if ($employee_name) : ?>
+                    <h2><?php echo $employee_name; ?></h2>
+                <?php endif; ?>
+            </div>
+
+            <?php endwhile; ?>
         </div>
 
-        <?php endwhile; ?>
+        <?php
+        $nextpage = $paged+1;
+        $prevouspage = $paged-1;
+        $total = $posts->max_num_pages;
+        $pagination_args = array(
+            'base'               => '%_%',
+            'format'             => '?paged=%#%',
+            'total'              => $total,
+            'current'            => $paged,
+            'show_all'           => true,
+            // 'end_size'           => 1,
+            // 'mid_size'           => 2,
+            'prev_next'          => true,
+            'prev_text'       => __('<span class="prev-next" data-attr="'.$prevouspage.'"><</span>'),
+            'next_text'       => __('<span class="prev-next" data-attr="'.$nextpage.'">></span>'),
+            'type'               => 'plain',
+            'add_args'           => false,
+            'add_fragment'       => '',
+            'before_page_number' => '',
+            'after_page_number'  => ''
+        );
+        $paginate_links = paginate_links($pagination_args);
+        ?>
+
         <?php wp_reset_query();  ?>
     <?php else : ?>
 
         <div>Coś poszło nie tak...</div>
 
     <?php endif; ?>
+
+    <div class="pagination__container">
+        <?php
+            if ($paginate_links != '') {
+                echo "<div id='pagination' class='container pagination'>";
+                echo $paginate_links;
+                echo "</div>";
+            }
+        ?>
+    </div>
 
     <?php die(1);
     
