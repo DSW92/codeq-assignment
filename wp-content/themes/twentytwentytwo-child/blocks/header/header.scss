@@ -12,7 +12,8 @@
     background-color: $header_color;
     // max-width: 1173px;
     min-height: 184px;
-    padding: 0.5rem 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     @include flex-center-col;
     h1 {
         margin: 0 0 1.5rem 0;
@@ -25,5 +26,11 @@
 @media (min-width: 1400px) {
     .page-header__container {
         max-width: 1173px;
+    }
+}
+
+@media (max-width: 768px) {
+    #page-header {
+        min-height: 240px;
     }
 }

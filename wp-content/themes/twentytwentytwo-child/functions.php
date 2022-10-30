@@ -12,6 +12,7 @@ add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15);
 add_action( 'init', 'register_acf_blocks' );
 function register_acf_blocks() {
     register_block_type( __DIR__ . '/blocks/header' );
+    register_block_type( __DIR__ . '/blocks/steps' );
 }
 
 ?>

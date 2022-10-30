@@ -5,7 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = {
     mode: 'none',
     watch: true,
-    entry: ["./src/main.scss", "./src/main.js", "./blocks/header/header.scss"],
+    entry: ["./src/main.scss", "./src/main.js", "./blocks/header/header.scss", "./blocks/steps/steps.scss"],
     plugins: [
         new MiniCssExtractPlugin()
     ],
