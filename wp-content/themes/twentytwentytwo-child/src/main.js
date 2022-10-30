@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
 
     function load_employees(paged) {
-        fetch("http://localhost:8888/codeq-assignment/wp-admin/admin-ajax.php", {
+        fetch(my_ajax_object.ajax_url, {
             method: "post",
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: "action=get_employees_list" + "&paged=" + paged
