@@ -36,3 +36,10 @@ Widok responsive wykonaj wg własnego uznania.
 
 2A. Jeśli wykonałeś zadanie 1, zmerguj branch do brancha master, utwórz z niego nowy branch i rozwiń podstronę o dodatkową sekcję z pracownikami (listą pracowników). 
 Lista powinna wyświetlać zdjęcie (ACF - pole typu image) oraz imię (ACF - pole typu text) pod zdjeciem i powinna być w całości załadowana AJAXem dopiero po wyświetleniu strony - np. po kliknięciu przycisku "pokaż pracowników". Wygląd CSS nie jest tu istotny.
+
+## Installation
+
+1. clone repository
+2. Setup WP database
+3. npm install - to install necessary dependencies
+4. npm run dev - run development instance (including webpack)
