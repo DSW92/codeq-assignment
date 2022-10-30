@@ -1,0 +1,36 @@
+@import '../../src/colors';
+@import '../../src/mixins';
+
+#page-header {
+    background-color: $header_bg_color;
+    min-height: 330px;
+    width: 100%;
+    @include flex-center-bottom;
+}
+
+.page-header__container {
+    background-color: $header_color;
+    // max-width: 1173px;
+    min-height: 184px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    @include flex-center-col;
+    h1 {
+        margin: 0 0 1.5rem 0;
+    }
+    h1,h2 {
+        text-align: center;
+    }
+}
+
+@media (min-width: 1400px) {
+    .page-header__container {
+        max-width: 1173px;
+    }
+}
+
+@media (max-width: 768px) {
+    #page-header {
+        min-height: 240px;
+    }
+}

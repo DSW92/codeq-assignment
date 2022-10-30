@@ -1,0 +1,14 @@
+{
+    "name": "acf/steps",
+    "title": "Steps",
+    "description": "A custom steps block.",
+    "style": [ "file:./steps.css" ],
+    "category": "formatting",
+    "icon": "editor-ol",
+    "keywords": ["steps", "quote"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "steps.php"
+    },
+    "align": "full"
+}
