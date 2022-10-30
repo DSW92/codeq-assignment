@@ -43,3 +43,4 @@ Lista powinna wyświetlać zdjęcie (ACF - pole typu image) oraz imię (ACF - po
 2. Setup WP database
 3. npm install - to install necessary dependencies
 4. npm run dev - run development instance (including webpack)
+5. Database in twentytwentytwo-child/wp-database
