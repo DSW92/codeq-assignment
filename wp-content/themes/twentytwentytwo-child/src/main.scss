@@ -1,3 +1,5 @@
+@import './colors';
+@import './mixins';
 @import "../node_modules/bootstrap/scss/bootstrap-grid.scss";
 
 * {
@@ -13,18 +15,21 @@ h1 {
     font-size: 40px;
     font-weight: 400;
     margin: 0 0 0 0;
+    color: $text_color;
 }
 
 h2 {
     font-size: 28px;
     font-weight: 400;
     margin: 0 0 0 0;
+    color: $text_color;
 }
 
 h4 {
     font-size: 20px;
     font-weight: 400;
     margin: 0 0 0 0;
+    color: $text_color;
 }
 
 .wp-site-blocks {
