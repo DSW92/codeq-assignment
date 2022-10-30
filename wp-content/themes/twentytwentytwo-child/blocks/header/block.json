@@ -1,0 +1,14 @@
+{
+    "name": "acf/header",
+    "title": "Header",
+    "description": "A custom header block.",
+    "style": [ "file:./header.css" ],
+    "category": "formatting",
+    "icon": "welcome-widgets-menus",
+    "keywords": ["header", "quote"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "header.php"
+    },
+    "align": "full"
+}
