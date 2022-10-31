@@ -1,10 +1,41 @@
 <section id="steps-module" class="steps-module">
     <div class="container steps-module__container">
         <div class="steps-module__picture">
-            <?php $image = get_field('steps-picture'); ?>
-            <?php if ($image) : ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php endif; ?>
+            <div class="steps-module__parall parall-1__container">
+                <div class="parall-1__line">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="parall parall-1"></div>
+            </div>
+            <div class="steps-module__parall parall-2__container">
+                <div class="parall-2__line">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="parall parall-2"></div>
+            </div>
+            <div class="steps-module__parall parall-3__container">
+                <div class="parall-3__line">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="parall parall-3"></div>
+            </div>
+            <div class="steps-module__parall parall-4__container">
+                <div class="parall-4__line">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="parall parall-4"></div>
+            </div>
+            <div class="steps-module__parall parall-5__container">
+                <div class="parall-5__line">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="parall parall-5"></div>
+            </div>
         </div>
         <?php if( have_rows('module-steps') ): ?>
             <?php while( have_rows('module-steps') ): the_row(); ?>
