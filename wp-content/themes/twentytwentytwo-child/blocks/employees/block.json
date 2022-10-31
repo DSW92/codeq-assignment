@@ -1,0 +1,14 @@
+{
+    "name": "acf/employees",
+    "title": "Pracownicy",
+    "description": "A custom employees block.",
+    "style": [ "file:./employees.css" ],
+    "category": "formatting",
+    "icon": "universal-access",
+    "keywords": ["employees", "quote"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "employees.php"
+    },
+    "align": "full"
+}
