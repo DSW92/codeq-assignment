@@ -239,6 +239,9 @@
     .steps-module__container .single-step.steps-module__step-4 {
         right: 220px;
     }
+    .steps-module__container .steps-module__picture div.steps-module__parall>div.parall {
+        width: 208px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -257,12 +260,15 @@
     .steps-module__container .single-step.steps-module__step-4 {
         right: 175px;
     }
+    .steps-module__container .steps-module__picture div.steps-module__parall>div.parall {
+        width: 161px;
+    }
 }
 
 @media (max-width: 992px) {
-    .steps-module__container .steps-module__picture {
-        display: none;
-    }
+    // .steps-module__container .steps-module__picture {
+    //     display: none;
+    // }
     .steps-module__container .single-step {
         position: initial;
         flex-direction: column-reverse;
@@ -270,6 +276,22 @@
     }
     .steps-module__container {
         padding: 30px 0;
+        .steps-module__picture {
+            position: absolute;
+            transform: rotate(90deg);
+            left: -350px;
+            right: initial;
+        }
+    }
+    .steps-module__container .steps-module__picture div.steps-module__parall.parall-1__container>div.parall-1__line,
+    .steps-module__container .steps-module__picture div.steps-module__parall.parall-2__container>div.parall-2__line,
+    .steps-module__container .steps-module__picture div.steps-module__parall.parall-3__container>div.parall-3__line,
+    .steps-module__container .steps-module__picture div.steps-module__parall.parall-4__container>div.parall-4__line,
+    .steps-module__container .steps-module__picture div.steps-module__parall.parall-5__container>div.parall-5__line {
+        display: none;
+    }
+    .steps-module__container .steps-module__picture div.steps-module__parall>div.parall {
+        width: 205px;
     }
 }
 
@@ -282,5 +304,19 @@
         h4 {
             font-size: 1rem;
         }
+    }
+    .steps-module__container {
+        .steps-module__picture {
+            left: -255px;
+        }
+    }
+    .steps-module__container .steps-module__picture div.steps-module__parall>div.parall {
+        width: 165px;
+    }
+}
+
+@media (max-width: 575px) {
+    .steps-module__container .steps-module__picture {
+        display: none;
     }
 }
