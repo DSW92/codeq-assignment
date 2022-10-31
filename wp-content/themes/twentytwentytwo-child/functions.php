@@ -6,7 +6,7 @@ function child_enqueue_styles() {
     wp_enqueue_script('twenty-twenty-two-child-js', get_stylesheet_directory_uri() . "/dist/main.js", ["jquery"], true);
 
     // AJAX URL
-    wp_localize_script( 'ajax-script', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+    wp_localize_script( 'twenty-twenty-two-child-js', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 
     // Fonts
     wp_enqueue_style( 'roboto', 'https://fonts.googleapis.com/css2?family=Roboto&display=swap' );
